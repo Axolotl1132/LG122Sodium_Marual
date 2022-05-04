@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<style>
+  table, td {
+    border: 1px solid black;
+  }
+</style>
+</head>
+<body>
+  <p>[enter a number from 2 to 10]</p>
+  <form>
+    <input type="text" id="num1">
+    by
+    <input type="text" id="num2">
+</br>
+</br>
+    <input type="submit" value="Click here when ready!" onclick ="multiply(); return false;">
+  </form>
+</br>
+  <table id="table">
+  <script>
+    function multiply() {
+      var table = "";
+      var x = document.getElementById('num1').value;
+      var y = document.getElementById('num2').value;
+      if((2 <= x && x <= 10) && (2 <= y && y <= 10)) {
+        for(countOne = 1; countOne<=x; countOne++) {
+          table += "<tr>";
+          for(countTwo = 1; countTwo<=y; countTwo++) {
+            table += "<td>" + countTwo*countOne + "</td>";
+          }
+          table += "</tr>"
+        }
+        document.getElementById('table').innerHTML = table;
+      }
+      else {
+        window.alert("Please enter numbers from 2 to 10.")
+      }
+    }
+  </script>
+</body>
+</html>
